@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Geopoints catalog</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="../index.html">Welcome Page</a>
+            <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./catalogue.html">Catalogue
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./newPoint.html" id="addPoint">Add Point</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./editTypes.html">Edit Types</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="container">
+        <form class="form-inline">
+            <div class="form-group">
+                <div>
+                    <label for="searchName">Search name: </label>
+                    <input type="text" class="form-control" id="searchName">
+                </div>
+                <div>
+                    <label for="searchAddress">Search address: </label>
+                    <input type="text" class="form-control" id="searchAddress">
+                </div>
+                <div>
+                    <label for="searchType" class="control-label">Filter type</label>
+                    <select class="custom-select form-control" name="searchType" id="searchType">
+
+                    </select>
+                </div>
+                <div>
+                    <label for="sort" class="control-label">Sort</label>
+                    <select class="custom-select form-control" name="sort" id="sort">
+                        <option value="0" selected>Name Ascending</option>
+                        <option value="1">Name Descending</option>
+                        <option value="2">Address Ascending</option>
+                        <option value="3">Address Descending</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="perPage" class="control-label">Per Page</label>
+                    <select class="custom-select form-control" name="perPage" id="perPage">
+                        <option value="3" selected>3</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+            </div>
+
+        </form>
+        <div class="form-group">
+            <br>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="search">Search</button>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row" id="results">
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <nav aria-label="Page navigation" id="pager" class="collapse">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <button class="page-link" aria-label="Previous" id="prev">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" aria-label="Next" id="next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+    </div>
+
+
+
+
+
+
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/viewPoints.js"></script>
+</body>
+
+</html>

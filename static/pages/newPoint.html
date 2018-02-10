@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Point operations</title>
+</head>
+
+<body>
+
+        <div class="container-fluid">
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <a class="navbar-brand" href="../index.html">Welcome Page</a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./catalogue.html">Catalogue
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./newPoint.html">Add Point</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="./editTypes.html">Edit Types</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        
+            </div>
+
+    <form class="container-fluid">
+
+        <div id='id' hidden="hidden"></div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="name" class="control-label col-xs-9 col-sm-9">Name</label>
+                <input required="required" type="text" class="form-control col-xs-12 col-sm-12 col-md-9" name="name" id="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="address" class="control-label col-xs-9 col-sm-9">Address</label>
+                <input type="text" class="form-control col-xs-12 col-sm-12 col-md-9" name="address" id="address" placeholder="Address">
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="latitude" class="control-label col-xs-9 col-sm-9">Latitude</label>
+                <input min="-90" max="90" step="0.00000001" required="required" type="number" class="form-control col-xs-12 col-sm-12 col-md-9" name="latitude"
+                    id="latitude" placeholder="latitude">
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="longitude" class="control-label col-xs-9 col-sm-9">Longitude</label>
+                <input min="-180" max="180" step="0.00000001" required="required" type="number" class="form-control col-xs-12 col-sm-12 col-md-9" name="longitude"
+                    id="longitude" placeholder="longitude">
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="type" class="control-label col-xs-9 col-sm-9">Point type</label>
+                <select class="custom-select form-control col-xs-12 col-sm-12 col-md-9" name="type" id="type">
+                </select>
+                <button type="button" name="addNewType" id="addNewType" class="btn btn-link btn-sm form-control">Add new type</button>
+            </div>
+        </div>
+        <div class="container collapse" id="typeForm">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="geopoint" class="control-label col-xs-9 col-sm-9">Geopoint type</label>
+                <input type="text" class="form-control col-xs-12 col-sm-12 col-md-9" name="geopoint" id="geopoint" aria-describedby="helpId"
+                    placeholder="Enter geopoint type">
+                <small id="helpId" class="form-text text-muted">Input new geopoint type</small>
+                <button type="button" class="btn btn-success" id="submitType">Submit type</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <label for="comment" class="control-label col-xs-9 col-sm-9">Comment</label>
+                <textarea class="form-control col-xs-12 col-sm-12 col-md-9" rows="5" name="comment" id="comment" placeholder="comment"></textarea>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+                <button type="submit" class="btn btn-success" id="submitPoint">Submit point</button>
+            </div>
+
+        </div>
+
+    </form>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/addType.js"></script>
+</body>
+
+</html>
