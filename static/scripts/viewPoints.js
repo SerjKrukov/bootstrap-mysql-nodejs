@@ -66,7 +66,7 @@ $(function () {
             pointsArray.sort(compare);
             if (pointsArray.length > itemOnPages) $('#pager').slideDown();
             else $('#pager').slideUp();
-            let limit = (pointsArray.length > itemOnPages * page) ? itemOnPages : pointsArray.length;
+            let limit = (pointsArray.length > itemOnPages * page) ? itemOnPages * page : pointsArray.length;
             if (pointsArray.length < itemOnPages * page) $('button#next').parent('li').addClass('disabled');
             if (page == 1) $('button#prev').parent('li').addClass('disabled');
             for(let i = (page - 1) * itemOnPages; i < limit; i++) {
