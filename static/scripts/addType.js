@@ -77,6 +77,30 @@ $(function() {
         });
     });
 
+    $('input[type=text]#name').on('focusout', function() {
+        if ($(this).val().length < 1) $(this).addClass('bg-danger');
+    });
+
+    $('input[type=text]#name').on('focusin', function() {
+        $(this).removeClass('bg-danger');
+    });
+
+    $('input[type=number]#latitude').on('focusout', function() {
+        if ($(this).val().length < 1) $(this).addClass('bg-danger');
+    });
+
+    $('input[type=number]#latitude').on('focusin change', function() {
+        $(this).removeClass('bg-danger');
+    });
+
+    $('input[type=number]#longitude').on('focusout', function() {
+        if ($(this).val().length < 1) $(this).addClass('bg-danger');
+    });
+
+    $('input[type=number]#longitude').on('focusin change', function() {
+        $(this).removeClass('bg-danger');
+    });
+
     $('button#submitPoint').on('click', function(event){
         event.preventDefault();
         let _id = `"${$('div#id').text()}"`
@@ -93,24 +117,30 @@ $(function() {
             type: _type,
             comment: _comment
         }
+        $('input').trigger('focusout');
         console.log(_data);
-        let _typePost = (idToEdit > 0) ? 'PUT' : 'POST';
-        let _url = (_typePost == 'PUT') ? 'updatePoint/' : 'addNewPoint/';
-        $.ajax({
-            url: _url,
-            type: _typePost,
-            contentType: 'application/json',
-            dataType: "json",
-            data: JSON.stringify(_data),
-            success: function(resp) {
-                console.log(resp.response);
-                // getTypes();
-            },
-            error: function(err) {
-                console.log("from error");
-                console.error(err);
+        if (($('input[type=text]#name').val().length > 0) && ($('input[type=number]#latitude').val().length)
+            && ($('input[type=number]#longitude').val().length > 0)) {
+                let _typePost = (idToEdit > 0) ? 'PUT' : 'POST';
+                let _url = (_typePost == 'PUT') ? 'updatePoint/' : 'addNewPoint/';
+                $.ajax({
+                    url: _url,
+                    type: _typePost,
+                    contentType: 'application/json',
+                    dataType: "json",
+                    data: JSON.stringify(_data),
+                    success: function(resp) {
+                        console.log(resp.response);
+                        $('div#alert').slideDown();
+                        // getTypes();
+                    },
+                    error: function(err) {
+                        console.log("from error");
+                        console.error(err);
+                    }
+                });
             }
-        });
+
         
     });
 

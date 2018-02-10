@@ -35,14 +35,17 @@
                 </nav>
         
             </div>
-
+            <div class="alert alert-success alert-dismissable collapse" id="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong> Point saved.
+                  </div>
     <form class="container-fluid">
 
         <div id='id' hidden="hidden"></div>
         <div class="container">
-            <div class="form-group col-xs-12 col-sm-12 col-md-9 col-lg-6">
+            <div class="form-group has-danger col-xs-12 col-sm-12 col-md-9 col-lg-6 ">
                 <label for="name" class="control-label col-xs-9 col-sm-9">Name</label>
-                <input required="required" type="text" class="form-control col-xs-12 col-sm-12 col-md-9" name="name" id="name" placeholder="Name">
+                <input required="required" type="text" class="form-control form-control-danger col-xs-12 col-sm-12 col-md-9 " name="name" id="name" placeholder="Name">
             </div>
         </div>
         <div class="container">
